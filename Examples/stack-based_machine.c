@@ -3,7 +3,7 @@
 
 int main(){
 
-    char password[20];
+    char password[20];     
     char input[20];
 
     /*Assegnamento della password tramite strncpy()*/
@@ -17,8 +17,8 @@ int main(){
     }else{
         printf("Password sbagliata.\n");
     }
-    /*Funzione puts() utilizzata per creare un breakpoint da gdb.*/
-    puts("Break.");
+    /*Funzione putc() utilizzata per creare un breakpoint da gdb.*/
+    putc('\n', stdout);
 
     /*Verifica dello stack: stampa della password e dell'input ricevuto.*/
     printf("Password inserita: %s\n", input);
