@@ -9,7 +9,7 @@ void vuln_function(){
 }
 
 int main(int argc, char *argv[]){
-    printf("Benvenuto in questa macchina! Potresti spawnare una shell?\n> ");
+    printf("Benvenuto in questa macchina! Potresti spawnare una shell?\n");
     vuln_function();
 
     return 0;
