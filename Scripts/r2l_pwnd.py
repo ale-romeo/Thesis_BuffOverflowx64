@@ -2,7 +2,7 @@ from pwn import *
 from pwn import p64
 
 
-#"Questo exploit si basa sulle vulnerabilità di libc e sfrutta il tool ropper per ricavare gli indirizzi dei gadget.
+#Questo exploit si basa sulle vulnerabilità di libc e sfrutta il tool ropper per ricavare gli indirizzi dei gadget.
 # Ha bisogno di ASLR disabilitato.
 def main():
     e = ELF('../Machines/ret2libc')
