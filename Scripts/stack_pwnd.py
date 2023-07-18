@@ -19,7 +19,7 @@ def main():
     stack = core.rsp #indirizzo del registro rsp
     info("Indirizzo del $rip = %#x", stack)
     pattern = core.read(stack, 4) #riconoscimento del pattern per ottenere poi l'offset
-    rip_offset = cyclic_find(pattern) #dimensione del payload
+    rip_offset = cyclic_find(pattern) #identificazione della dimensione del payload
     info("L'offset del $rip e' di %d", rip_offset)
     p.close()
 

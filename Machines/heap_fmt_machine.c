@@ -12,7 +12,7 @@ int main(int argc, char **argv){
     printf(s); //ATTENZIONE VULNERABILITA'
 
     puts("????");
-    puts("A quanto pare ti sbagli. La data di oggi è: ");
+    puts("A quanto pare ti sbagli. La data di oggi e': ");
     system(date_path);
     return 0;
 }

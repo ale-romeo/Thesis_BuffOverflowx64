@@ -15,10 +15,11 @@ char *service;
 int main(int argc, char **argv){
     char line[128];
     char *dump;
-    printf("Ciao! Benvenuto nel servizio di autenticazione più sicuro in Italia.\n\n");
+    printf("Ciao! Benvenuto nel servizio di autenticazione piu' sicuro in Italia.\n\n");
 
     while (1){
-        printf("***************************************************\n\n");
+        printf("************************* \
+        **************************\n\n");
         printf("[ auth = %p, service = %p ]\n", authVar, service); /*debug purpose*/
         printf("Comandi disponbili:\n) auth _nome_\n) reset\n) service\n) login\n) exit\n");
         puts("> ");
@@ -46,7 +47,7 @@ int main(int argc, char **argv){
             }else{
                 printf("Ecco la tua shell: \n");
                 scanf("%s", dump);
-                printf("Ci hai creduto davvero? Non è così semplice!\n");
+                printf("Ci hai creduto davvero? Non e' cosi' semplice!\n");
             }
         }
         if (strncmp(line, "exit", 4) == 0){

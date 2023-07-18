@@ -14,8 +14,9 @@ fp *toInt(){
 int main(int argc, char **argv){
 	unsigned int *array, length, size, i = 0;
 
-	puts("Ciao! Questa è un semplice macchina che alloca array di unsigned int. (niente shell)");
-	puts("************************************************************************************");
+	puts("Ciao! Questa e' un semplice macchina che alloca array di unsigned int. (niente shell)");
+	puts("************************************* \
+	***********************************************");
 	length = atoi(argv[1]);
 	printf("Lunghezza array: %d\n", length);
 

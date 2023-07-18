@@ -12,7 +12,7 @@ int main()
     {
 
         printf("Ciao! Benvenuto in questo negozio di consigli.\n");
-        printf("Purtroppo per te non ci sono vulnerabilità qui.\n");
+        printf("Purtroppo per te non ci sono vulnerabilita' qui.\n");
 
         printf("\n[1] Verifica il tuo bilancio\n");
         printf("\n[2] Compra qualcosa\n");
@@ -44,7 +44,7 @@ int main()
                 {
                     int total_cost = 0;
                     total_cost = 1000 * number_flags;
-                    printf("\nIl totale è: %d\n", total_cost);
+                    printf("\nIl totale e': %d\n", total_cost);
                     if (total_cost <= account_balance)
                     {
                         account_balance = account_balance - total_cost;
